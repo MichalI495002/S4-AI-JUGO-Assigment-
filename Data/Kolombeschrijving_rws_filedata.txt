@@ -1,0 +1,30 @@
+Filedata wordt door het NDW samengesteld op basis van Floating Car Data. Hierbij worden wachtrijen van meer dan 2 kilometer lengte als een file aangemerkt of wegvakken waarbij de reistijd een drempelwaarde overschrijden. 
+In de filemeldkamer van RWS worden de fileberichten geaccordeerd en voorzien van een oorzaakcode. Deze informatie is de basis voor diverse beleidsrapportages van RWS aangaande de prestaties van het netwerk.
+
+Kolomnaam				Beschrijving
+NLSitNummer				Uniek nummer van de filesiutatie toegekend door RWS
+DatumFileBegin			Datum van het eerste filebericht behorend bij deze file
+DatumFileEind			Datum van afronding van het laatste filebericht behorend bij deze file
+TijdFileBegin			Tijdstip van het eerste filebericht behorend bij deze file
+TijdFileEind			Tijdstip van afronding van het laatste filebericht behorend bij deze file
+FileZwaarte				Filezwaarte is de som van de lengte * duur van de fileberichten (km min)
+GemLengte				Dit is de naar de tijd gewogen gemiddelde lengte van de file (meter)
+FileDuur				Fileduur is totale duur van de file (het verschil tussen begintijdstip en eindtijdstiop)
+HectometerKop			De waarde van het hectometerbord behorend bij eerste filebericht bij de kop van de file
+HectometerStaart		De waarde van het hectometerbord behorend bij het laatste filebericht bij de staart van de file
+RouteLet				De letter van de wegnaam (A of N)
+RouteNum				De numerieke waarde van de wegnaam (1...999)
+RouteOms				De samenvoeging van RouteLet en RouteNum
+hectometreringsrichting oplopend hoort bij Re aflopend hoort bij Li
+KopWegvakVan			De VILD-wegbenamaming van het wegvak van de koplocatie (het punt voor het einde van de file)
+KopWegvakNaar			De VILD-wegbenamaming van het wegvak van de koplocatie (het punt voorbij het einde van de file)
+TrajVan					Het bovenliggend VILD-traject (zoals Amsterdam - Amersfoort) behorend bij de file
+TrajNaar				Het bovenliggend VILD-traject (zoals Amsteream - Amersfoort) behorend bij de file)
+OorzaakGronddetail		Beschrijving van de oorzaakcode die is geregistreerd bij deze file
+OorzaakVerloop			Een verzameling van de verschillende oorzaken die in de onderliggende fileberichten zijn gelogd
+OorzaakCodeVerloop		De codering (DATEX1) van de oorzaken van de file.
+OorzaakCode				De codering (DATEX1) van de oorzaken van de file.
+Oorzaak_1				Een door RWS gehanteerde oorzaak-aggratie op 1e niveau
+Oorzaak_2				Een door RWS gehanteerde oorzaak-aggratie op 2e niveau
+Oorzaak_3				Een door RWS gehanteerde oorzaak-aggratie op 3e niveau
+Oorzaak_4				Een door RWS gehanteerde oorzaak-aggratie op 4e niveau
