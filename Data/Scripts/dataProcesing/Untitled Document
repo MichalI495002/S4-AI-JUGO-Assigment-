@@ -1,0 +1,53 @@
+I attached .csv file with traffic data there are multiple rows there with multiple start dates, end dates, start times end times
+
+I want to modify this data that, there is not going to be rows that for example:
+That their `File Start Time` is going to be 08:30:00 and their `File End Time` is going to be 09:30:00
+
+I want to edit this data in this way that if there is a row which `File Start Time` hour 
+(here marked as X) XX:00:00 is diffrent then `File End Time` hour (here marked as Y)
+YY:00:00 then row is going to be splited into two rows. Also to take into conisration dates so if `File Start Date` day (here marked as Z) 2022-12-ZZ (it is exmaple date) is diffrent from `File End Date` (here marked as Q) 2022-12-QQ it also have to be splitted to two rows
+
+For example:
+
+"First example row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-30 ;`File Start Time` = 08:48:21 ; `File End Time`= 09:17:32"
+
+This row has to be splited into two rows which should look like this:
+
+"First split row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-30 ; `File Start Time` = 08:48:21 ; `File End Time`= 08:59:59"
+"Second split row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-30  ;`File Start Time` = 09:00:00 ; `File End Time`= 09:17:32"
+
+Second example: 
+
+"Second example row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-31 ;`File Start Time` = 23:34:41 ; `File End Time`= 00:47:32"
+
+This row has to be splited into two rows which should look like this:
+
+"First split row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-30 ; `File Start Time` = 23:34:41 ; `File End Time`= 23:59:59"
+"Second split row: `File Start Date` = 2022-12-31 ; `File End Date` = 2022-12-31  ;`File Start Time` = 00:00:00 ; `File End Time`= 00:47:32"
+
+Another exaple row also can look like this: 
+
+"Thrid Example row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-31; `File Start Time` = 23:48:21 ; `File End Time`= 01:23:38"
+
+In this case there is need for multiple splitting and for changing date which should look like this:
+
+"First split row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-30; `File Start Time` = 23:48:21 ; `File End Time`= 23:59:59"
+"Second split row: `File Start Date` = 2022-12-31 ; `File End Date` = 2022-12-31; `File Start Time` = 00:00:00 ; `File End Time`= 00:59:59"
+"Third split row: `File Start Date` = 2022-12-31 ; `File End Date` = 2022-12-31; `File Start Time` = 1:00:00 ; `File End Time`= 01:23:38"
+
+
+
+
+Now after running our script in our new created data frame there is no time which is on span of two dates there are only rows like this:
+
+"First row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-31 ;`File Start Time` = 23:00:00 ; `File End Time`= 23:59:59"
+"Second row: `File Start Date` = 2022-12-30 ; `File End Date` = 2022-12-31 ;`File Start Time` = 00:00:00 ; `File End Time`= 00:59:59"
+
+In this situation rows has inccorect dates, becouse they span is only one day so every row should have one date,
+
+"Corrected first row: `Date` = 2022-12-30 ; `File Start Time` = 23:00:00 ; `File End Time`= 23:59:59"
+"Corrected second row: `Date`= 2022-12-31 ;`File Start Time` = 00:00:00 ; `File End Time`= 00:59:59"
+
+As you can see dates in those rows are diffrent becouse on `File End Time`= 23:59:59" on day ends and on `File Start Time` = 00:00:00 another day starts remember after running previus code we dont have time which spans on two days
+
+
